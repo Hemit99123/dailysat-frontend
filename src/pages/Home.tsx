@@ -1,8 +1,13 @@
+import ProtectedRoute from "../wrapper/ProtectedRoute"
+
 const Home = () => {
   return (
-    <div className="flex text-red-500 justify-center items-center h-screen">
-        Home
-    </div>
+    <ProtectedRoute>
+        <div className="flex text-red-500 justify-center items-center h-screen">
+            Home
+        </div>
+    </ProtectedRoute>
+
   )
 }
 
