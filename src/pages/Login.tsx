@@ -13,7 +13,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-        <div className='border-black border-2 px-20 py-5 rounded-lg shadow-lg'>
+        <div>    
             {isLogin ? (
                 <>
                     <LoginCardView />
