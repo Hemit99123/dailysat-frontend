@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import httpService from "../libs/httpService";
+import httpService from "../utils/httpService";
 
 const VerifyEmail = () => {
     const [email, setEmail] = useState("");
@@ -70,6 +70,10 @@ const VerifyEmail = () => {
                     <span>
                         Generate a new code <span className="text-violet-700 cursor-pointer" onClick={() => navigate("/generate-code")}>here</span>
                     </span>
+
+                    <span>
+                        Go to login <span className="text-blue-700 cursor-pointer" onClick={() => navigate("/login")}>here</span>
+                    </span> 
                 </form>
             </div>
         </div>

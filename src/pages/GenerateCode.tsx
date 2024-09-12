@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import httpService from "../libs/httpService";
+import httpService from "../utils/httpService";
 
 const GenerateCode = () => {
     const [email, setEmail] = useState("");

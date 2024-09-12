@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import httpService from '../../libs/httpService';
+import httpService from '../../utils/httpService';
 
-const LoginCardView = () => {
+const RegisterCardView = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
   const [name, setName] = useState<string | null>(null); 
@@ -13,11 +13,11 @@ const LoginCardView = () => {
     e.preventDefault();
 
     try {
-      const response = await httpService.post("/auth/login", { email, password });
+      const response = await httpService.post("/auth/register", { email, password, name });
 
       if (response.status === 200) {
-        alert("Successfully logged in!");
-        navigate('/'); 
+        alert("Successfully registered your account! You may log in now!");
+        navigate('/login'); 
       } else {
         throw new Error(response.data.error);
       }
@@ -118,4 +118,4 @@ const LoginCardView = () => {
   );
 };
 
-export default LoginCardView;
+export default RegisterCardView;

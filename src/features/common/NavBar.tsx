@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthProvider"
-import httpService from "../../libs/httpService";
+import httpService from "../../utils/httpService";
 
 const NavBar = () => {
 

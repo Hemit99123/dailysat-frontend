@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import httpService from '../libs/httpService';
+import httpService from '../utils/httpService';
 
 // Define the context type
 interface AuthContextType {

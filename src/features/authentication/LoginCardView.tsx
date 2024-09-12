@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import httpService from '../../libs/httpService';
+import httpService from '../../utils/httpService';
 
 const LoginCardView = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   const handleLoginEmailPwd = async (e: React.FormEvent) => {
     e.preventDefault();
