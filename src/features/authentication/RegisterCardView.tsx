@@ -1,18 +1,23 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import httpService from '../../utils/httpService';
 
-const LoginCardView = () => {
+const RegisterCardView = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
+  const [name, setName] = useState<string | null>(null); 
+  
+  const navigate = useNavigate();
 
   const handleLoginEmailPwd = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const response = await httpService.post("/auth/login", { email, password });
+      const response = await httpService.post("/auth/register", { email, password, name });
 
       if (response.status === 200) {
-        alert("Successfully logged in!");
+        alert("Successfully registered your account! You may log in now!");
+        navigate('/login'); 
       } else {
         throw new Error(response.data.error);
       }
@@ -54,6 +59,16 @@ const LoginCardView = () => {
                   placeholder="Password"
                 />
               </div>
+              <div>
+                <input
+                  onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  type="text"
+                  required
+                  className="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
+                  placeholder="Name"
+                />
+              </div>
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center">
                   <input
@@ -90,9 +105,17 @@ const LoginCardView = () => {
             </div>
           </form>
         </div>
+
+        <button 
+          className="mt-5 w-full py-1.5 text-sm font-semibold rounded text-white bg-black"
+          onClick={() => navigate("/verify-email")}
+        >
+          Verify your email
+        </button>
+      
       </div>
     </div>
   );
 };
 
-export default LoginCardView;
+export default RegisterCardView;
