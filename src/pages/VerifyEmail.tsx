@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import httpService from "../libs/httpService";
 
 const VerifyEmail = () => {
     const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ const VerifyEmail = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/verify`, {
+            const response = await httpService.post("/auth/verify", {
                 email,
                 code: verificationCode.join("")
             })

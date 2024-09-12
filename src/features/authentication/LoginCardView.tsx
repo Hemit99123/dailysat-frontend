@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import httpService from '../../libs/httpService';
 
 const LoginCardView = () => {
   const [email, setEmail] = useState<string | null>(null);
@@ -11,7 +11,7 @@ const LoginCardView = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, { email, password });
+      const response = await httpService.post("/auth/login", { email, password });
 
       if (response.status === 200) {
         alert("Successfully logged in!");

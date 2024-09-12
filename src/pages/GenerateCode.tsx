@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import httpService from "../libs/httpService";
 
 const GenerateCode = () => {
     const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ const GenerateCode = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/generate-code`, {
+            const response = await httpService.post(`${import.meta.env.VITE_API_URL}/auth/generate-code`, {
                 email,
                 type
             });

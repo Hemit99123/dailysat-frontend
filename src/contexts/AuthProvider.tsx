@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import httpService from '../libs/httpService';
 
 // Define the context type
 interface AuthContextType {
@@ -15,7 +15,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const checkSession = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/auth/check-session`);
+            const response = await httpService.get("/auth/check-session");
             setAuth(response.data.success);
         } catch (error) {
             setAuth(false);
