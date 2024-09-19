@@ -5,6 +5,7 @@ import NavBar from './features/common/NavBar';
 import Login from './pages/Login';
 import VerifyEmail from './pages/VerifyEmail';
 import GenerateCode from './pages/GenerateCode';
+import Register from './pages/Register';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/generate-code" element={<GenerateCode />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
