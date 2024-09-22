@@ -11,10 +11,9 @@ interface Skill {
 }
 
 const Home = () => {
-  // Initialize state with null as the default value
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 
-  // Sample skills data
+  // Skills data
   const skills: Skill[] = [
     { id: 1, name: "Information and Ideas", description: "Skill 1" },
     { id: 2, name: "Craft and Structure", description: "Skill 2" },
