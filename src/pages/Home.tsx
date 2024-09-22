@@ -85,10 +85,12 @@ const Home = () => {
               <p className="text-lg">{selectedSkill.description}</p>
             </div>
           ) : (
-              <div className="mt-16 text-center">
-                <Header />
-                <hr className="mx-8 my-5 h-px border-0 bg-gray-200" />
-                <Question />
+            <div className="flex flex-col items-center flex-grow">
+                <div className="mt-16 text-center">
+                  <Header />
+                  <hr className="mx-8 my-5 h-px border-0 bg-gray-200" />
+                  <Question />
+              </div>
             </div>
           )}
         </div>
