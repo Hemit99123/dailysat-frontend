@@ -80,15 +80,15 @@ const Home = () => {
           {/* Content on the right side */}
           {selectedSkill ? (
             <div className="w-full">
-              <h2 className="text-2xl font-bold mb-4">{selectedSkill.name}</h2>
-              <p className="text-lg">{selectedSkill.description}</p>
+              <div className="text-center mb-16">
+                <Header name={selectedSkill.name}/>
+              </div>
+              <Question />
             </div>
           ) : (
             <div className="flex flex-col items-center flex-grow">
                 <div className="mt-16 text-center">
-                  <Header />
                   <hr className="mx-8 my-5 h-px border-0 bg-gray-200" />
-                  <Question />
               </div>
             </div>
           )}

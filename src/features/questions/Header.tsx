@@ -1,9 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const Header = () => {
+interface HeaderProps {
+  name: string;
+}
+
+
+const Header: React.FC<HeaderProps> = ({name}) => {
   return (
     <>
-      <h1 className="text-3xl font-semibold">Sound questions</h1>
+      <h1 className="text-3xl font-semibold">{name}</h1>
       <div className="mt-2 flex justify-center space-x-3">
         <div className="flex items-center space-x-1">
           <img
